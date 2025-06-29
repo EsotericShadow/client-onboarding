@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Submission {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  clientName   String
+  email        String
+  formData     Json
+  files        FileMeta[]
+}
+
+model FileMeta {
+  id           String     @id @default(cuid())
+  name         String
+  type         String
+  url          String
+  size         Int
+  submissionId String
+  submission   Submission @relation(fields: [submissionId], references: [id])
+}
