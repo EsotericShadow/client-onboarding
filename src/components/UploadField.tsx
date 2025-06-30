@@ -18,7 +18,7 @@ export default function UploadField({ setFiles }: { setFiles: (files: FileData[]
   };
 
   return (
-    <div className="border-2 border-dashed p-4">
+    <div className="border-2 border-dashed p-4 rounded-xl shadow-sm">
       <input
         type="file"
         onChange={(e) => e.target.files?.[0] && handleUpload(e.target.files[0])}
