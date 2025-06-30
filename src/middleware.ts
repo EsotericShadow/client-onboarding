@@ -9,6 +9,8 @@ export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) {
     await auth.protect();
   }
+}, {
+  authorizedParties: ["http://localhost:3000", "https://evergreenwebsolutions.ca"],
 });
 
 export const config = {
