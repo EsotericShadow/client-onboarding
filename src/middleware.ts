@@ -10,7 +10,7 @@ export default clerkMiddleware(async (auth, req) => {
     await auth.protect();
   }
 }, {
-  authorizedParties: ["http://localhost:3000", "https://evergreenwebsolutions.ca"],
+  authorizedParties: ["http://localhost:3000", "https://evergreenwebsolutions.ca", "https://client-onboarding-mu.vercel.app"],
 });
 
 export const config = {
