@@ -11,7 +11,7 @@ type FormData = {
   clientName: string;
   email: string;
   details: string;
-  files: { url: string; name: string; type: string; size: number }[];
+  files?: { url: string; name: string; type: string; size: number }[];
 };
 
 export default function MultiStepForm() {
