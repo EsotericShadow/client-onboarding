@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { success, data, error } = validateFormData(body);
-    if (!success) {
+    if (!success || !data) { // Ensure data is not null if success is true
       return NextResponse.json({ error }, { status: 400 });
     }
 
