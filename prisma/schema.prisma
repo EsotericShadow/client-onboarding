@@ -12,7 +12,7 @@ model Submission {
   createdAt    DateTime @default(now())
   clientName   String
   email        String
-  formData     Json
+  formData     Json // Flexible JSON field for multi-step form data
   files        FileMeta[]
 }
 
@@ -23,5 +23,5 @@ model FileMeta {
   url          String
   size         Int
   submissionId String
-  submission   Submission @relation(fields: [submissionId], references: [id])
+  submission   Submission @relation(fields: [submissionId], references: [id]) // Relation to Submission
 }
