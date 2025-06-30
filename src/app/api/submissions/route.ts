@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { logger } from "@/lib/logger";
 
 export async function GET(req: NextRequest) {
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) {
     return new NextResponse("Unauthorized", { status: 401 });
